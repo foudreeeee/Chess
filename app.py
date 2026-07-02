@@ -48,10 +48,10 @@ ss = st.session_state
 # Contrôles
 # --------------------------------------------------------------------------- #
 st.sidebar.header("♟ Échecs")
-choice = st.sidebar.radio("Le bot joue", ["Blancs", "Noirs"])
+choice = st.sidebar.radio("Je joue", ["Blancs", "Noirs"])
 bot_color = chess.WHITE if choice == "Blancs" else chess.BLACK
-human_color = not bot_color
-if bot_color != ss.bot:                   # changer de couleur = nouvelle partie
+human_color = not bot_color               # comportement inchangé : le bot joue la couleur choisie
+if bot_color != ss.bot:                    # changer de couleur = nouvelle partie
     ss.bot = bot_color
     new_game()
 
