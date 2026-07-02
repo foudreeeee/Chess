@@ -1,16 +1,15 @@
 # ♟ Chess — le moteur joue le meilleur coup
 
 Interface web d'échecs (Streamlit) où un moteur joue **toujours le meilleur coup**.
-Tu choisis ta couleur, tu joues ton camp, le moteur répond au mieux — ou tu regardes
-deux moteurs s'affronter.
+Tu choisis la couleur jouée par le bot, tu joues l'autre camp, le bot répond au mieux.
 
 ## Fonctionnalités
 - Échiquier cliquable (clic sur ta pièce → clic sur la case cible).
-- **Mode Vous vs Moteur** : le moteur joue toujours le meilleur coup pour son camp.
-- **Mode Moteur vs Moteur** : lecture automatique de la meilleure partie possible.
-- Boutons : Nouvelle partie, Annuler, ⚡ Jouer le meilleur coup, 💡 Suggestion.
-- Choix de la couleur, du temps de réflexion, de la pièce de promotion.
-- Surbrillance du dernier coup / des coups légaux, détection échec / mat / nulle, historique.
+- **Choix de la couleur du bot** (Blancs / Noirs) ; toi tu joues l'autre camp.
+- Bouton **Commencer la partie** : rien ne bouge tant que tu ne l'as pas cliqué.
+- Bouton **Nouvelle partie**.
+- Le bot joue automatiquement le meilleur coup pour sa couleur ; promotion des pions en Dame.
+- Surbrillance du dernier coup et des coups légaux, détection échec / mat / nulle.
 
 Le meilleur coup est calculé par **Stockfish** s'il est installé, sinon par un
 **minimax alpha-beta** intégré (l'appli marche même sans binaire externe).
@@ -28,18 +27,3 @@ Pour le vrai « meilleur coup », installe Stockfish :
 - Arch : `sudo pacman -S stockfish`
 - Debian/Ubuntu : `sudo apt install stockfish`
 - macOS : `brew install stockfish`
-
-## Héberger sur GitHub + Streamlit Community Cloud
-
-1. Crée un dépôt GitHub et pousse ces fichiers :
-   ```bash
-   git init && git add . && git commit -m "Chess best-move app"
-   git branch -M main
-   git remote add origin git@github.com:<toi>/<repo>.git
-   git push -u origin main
-   ```
-2. Va sur https://share.streamlit.io → **New app** → sélectionne ton repo,
-   branche `main`, fichier `app.py`.
-3. Le fichier `packages.txt` installe automatiquement Stockfish sur le cloud.
-
-C'est tout : l'appli est en ligne. 🎉
